@@ -1,0 +1,14 @@
+#!/bin/sh
+
+RUST_ANALYZER_DIR="$HOME/work/tools/rust-analyzer/"
+
+mkdir -p $RUST_ANALYZER_DIR
+
+{{ if eq .chezmoi.os "darwin" }}
+REMOTE_FILE=rust-analyzer-aarch64-apple-darwin.gz
+{{ else if eq .chezmoi.os "linux"}}
+REMOTE_FILE=rust-analyzer-aarch64-unknown-linux-gnu.gz
+{{ end }}
+
+curl -L https://github.com/rust-lang/rust-analyzer/releases/download/nightly/$REMOTE_FILE | gunzip -c - > $RUST_ANALYZER_DIR/rust-analyzer
+chmod +x $RUST_ANALYZER_DIR/rust-analyzer

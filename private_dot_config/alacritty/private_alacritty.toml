@@ -36,7 +36,7 @@ startup_mode = "Fullscreen"
 family = "Hack Nerd Font"
 
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "zellij attach --index 0 || zellij"]
 program = "/bin/zsh"
 
@@ -66,3 +66,5 @@ bindings = [
   { key = "S", mods = "Command|Alt", chars = "\uE171" },
   { key = "T", mods = "Command|Alt", chars = "\uE172" },
 ]
+
+[terminal]

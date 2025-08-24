@@ -2,11 +2,13 @@
 
 TOOL_DIR=$HOME/work/tools/
 
-{{ if eq .chezmoi.os "darwin" -}}
-DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-arm.tar.gz"
+{{ if eq .chezmoi.arch "arm64" }}
+ARCH=arm
 {{ else }}
-DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz"
-{{ end -}}
+ARCH=x86_64
+{{ end }}
+
+DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-{{ .chezmoi.os }}-$ARCH.tar.gz"
 
 mkdir -p $TOOL_DIR 
 
