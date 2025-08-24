@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+TOOL_DIR=$HOME/work/tools/
+
+{{ if eq .chezmoi.os "darwin" -}}
+DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-arm.tar.gz"
+{{ else }}
+DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz"
+{{ end -}}
+
+mkdir -p $TOOL_DIR 
+
+curl -sSL $DOWNLOAD_URL | tar -xz -C $TOOL_DIR 

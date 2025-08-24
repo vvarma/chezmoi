@@ -1,0 +1,68 @@
+[general]
+live_config_reload = true
+
+[colors.bright]
+black = "0x444b6a"
+blue = "0x7da6ff"
+cyan = "0x0db9d7"
+green = "0xb9f27c"
+magenta = "0xbb9af7"
+red = "0xff7a93"
+white = "0xacb0d0"
+yellow = "0xff9e64"
+
+[colors.normal]
+black = "0x32344a"
+blue = "0x7aa2f7"
+cyan = "0x449dab"
+green = "0x9ece6a"
+magenta = "0xad8ee6"
+red = "0xf7768e"
+white = "0x787c99"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x1a1b26"
+foreground = "0xa9b1d6"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+startup_mode = "Fullscreen"
+
+
+[font.normal]
+family = "Hack Nerd Font"
+
+
+[shell]
+args = ["-l", "-c", "zellij attach --index 0 || zellij"]
+program = "/bin/zsh"
+
+[keyboard]
+bindings = [
+  { key = "Space", mods = "Shift", mode = "~Search", action = "ToggleViMode" },
+  { key = "Left", mods = "Command", chars = "\uE000" },
+  { key = "Right", mods = "Command", chars = "\uE001" },
+  { key = "Up", mods = "Command", chars = "\uE002" },
+  { key = "Down", mods = "Command", chars = "\uE003" },
+  { key = "-", mods = "Command", chars = "\uE016" },
+  { key = "+", mods = "Command", chars = "\uE017" },
+  { key = "[", mods = "Command", chars = "\uE023" },
+  { key = "]", mods = "Command", chars = "\uE024" },
+  { key = "Enter", mods = "Command", chars = "\uE026" },
+  { key = "F", mods = "Command", chars = "\uE106" },
+  { key = "G", mods = "Command", chars = "\uE107" },
+  { key = "I", mods = "Command", chars = "\uE109" },
+  { key = "P", mods = "Command", chars = "\uE116" },
+  { key = "S", mods = "Command", chars = "\uE119" },
+  { key = "T", mods = "Command", chars = "\uE120" },
+  { key = "W", mods = "Command", chars = "\uE123" },
+  { key = "M", mods = "Command|Alt", chars = "\uE165" },
+  { key = "O", mods = "Command|Alt", chars = "\uE167" },
+  { key = "P", mods = "Command|Alt", chars = "\uE168" },
+  { key = "R", mods = "Command|Alt", chars = "\uE170" },
+  { key = "S", mods = "Command|Alt", chars = "\uE171" },
+  { key = "T", mods = "Command|Alt", chars = "\uE172" },
+]

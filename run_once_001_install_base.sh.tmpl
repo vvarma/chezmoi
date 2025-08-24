@@ -1,0 +1,29 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+fonts_list=(
+  font-hack-nerd-font
+)
+
+brew install \
+  alacritty \
+  aria2 \
+  bazelisk \
+  clang-format \
+  f1bonacc1/tap/process-compose \
+  firefox \
+  fzf \
+  go \
+  just \
+  kubectl \
+  lazygit \
+  npm \
+  python \
+  ripgrep \
+  xcodesorg/made/xcodes
+
+for font in "${fonts_list[@]}"
+do
+  brew install --cask "$font"
+done
+
+{{ end -}}
