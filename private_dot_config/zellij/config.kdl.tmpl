@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds clear-defaults=true{
     unbind "Ctrl o"
@@ -23,6 +24,33 @@ keybinds clear-defaults=true{
       bind "f"         { ToggleFocusFullscreen ; SwitchToMode "Normal" ; }
     }
 }
+{{ else if eq .chezmoi.os "linux" -}}
+// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+keybinds clear-defaults=true{
+    unbind "Ctrl o"
+    shared_except "locked" {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        // bind "Ctrl q" { Quit; }
+        bind "Ctrl Enter" { NewPane "Right"; } // Cmd-Enter
+        bind "Ctrl p" { SwitchToMode "Pane"; } // Cmd-P
+        bind "Ctrl t" { NewTab; } // Cmd-T
+        bind "Ctrl Left" { MoveFocusOrTab "Left"; }
+        bind "Ctrl Right" { MoveFocusOrTab "Right"; }
+        bind "Ctrl Down" { MoveFocus "Down"; }
+        bind "Ctrl Up" { MoveFocus "Up"; }
+        // bind "" { Resize "Increase"; }
+        // bind "" { Resize "Decrease"; }
+        bind "Ctrl [" { PreviousSwapLayout; } // Cmd-[
+        bind "Ctrl ]" { NextSwapLayout; } // Cmd-]
+    }
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }
+    }
+    pane {
+      bind "f"         { ToggleFocusFullscreen ; SwitchToMode "Normal" ; }
+    }
+}
+{{ end -}}
 
 plugins {
     tab-bar location="zellij:tab-bar"

@@ -40,6 +40,8 @@ family = "Hack Nerd Font"
 args = ["-l", "-c", "zellij attach --index 0 || zellij"]
 program = "/bin/zsh"
 
+{{ if eq .chezmoi.os "darwin" -}}
+
 [keyboard]
 bindings = [
   { key = "Space", mods = "Shift", mode = "~Search", action = "ToggleViMode" },
@@ -66,5 +68,7 @@ bindings = [
   { key = "S", mods = "Command|Alt", chars = "\uE171" },
   { key = "T", mods = "Command|Alt", chars = "\uE172" },
 ]
+
+{{ end -}}
 
 [terminal]

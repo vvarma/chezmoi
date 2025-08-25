@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
-#!/bin/sh
+#!/bin/bash
 brew install \
   alacritty \
   aria2 \
@@ -17,15 +17,13 @@ brew install \
   ripgrep \
   xcodesorg/made/xcodes
 
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if eq .chezmoi.os "linux" -}}
 
-#!/bin/sh
+#!/bin/bash -e
 
-dnf install \
+sudo dnf install \
   alacritty \
-  bazelisk \
   clang-format \
-  f1bonacc1/tap/process-compose \
   firefox \
   fzf \
   go \
@@ -34,6 +32,7 @@ dnf install \
   lazygit \
   npm \
   python \
-  ripgrep 
+  ripgrep \
+  xz
 
 {{ end -}}

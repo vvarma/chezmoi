@@ -9,16 +9,16 @@ do
   brew install --cask "$font"
 done
 
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if eq .chezmoi.os "linux" -}}
 
-#!/bin/sh
+#!/bin/bash -ex
 
-FONT_NAME="Hack""
+FONT_NAME="Hack"
 FONT_DIR="$HOME/.local/share/fonts"
 
 curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${FONT_NAME}.tar.xz  -o "/tmp/${FONT_NAME}.tar.xz"
 
-tar -xzf /tmp/${FONT_NAME}.tar.xz -C ${FONT_DIR}
+tar xf /tmp/${FONT_NAME}.tar.xz -C ${FONT_DIR}
 
 fc-cache -fv "$FONT_DIR"
 
