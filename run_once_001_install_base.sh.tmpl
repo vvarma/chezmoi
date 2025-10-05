@@ -5,6 +5,7 @@ brew install \
   aria2 \
   bazelisk \
   clang-format \
+  docker \
   f1bonacc1/tap/process-compose \
   firefox \
   fzf \
@@ -16,6 +17,8 @@ brew install \
   python \
   ripgrep \
   xcodesorg/made/xcodes
+
+brew link docker
 
 {{ else if eq .chezmoi.os "linux" -}}
 
