@@ -1,0 +1,11 @@
+{
+  "main fn": {
+    "prefix": "dain",
+    "body": [
+      "async fn main() -> AnyResult<()>{",
+      "  return Ok(())",
+      "}"
+    ],
+    "description": "main fn"
+  }
+}

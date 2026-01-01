@@ -1,9 +1,11 @@
 return {
   {
-    --"mrcjkb/rustaceanvim",
+    -- 'mrcjkb/rustaceanvim',
+    -- version = '^6', -- Recommended
+    lazy = false, -- This plugin is already lazy
     dir = "~/work/vvarma/lazy-plugins/rustaceanvim/",
-    --version = false, -- Recommended
     ft = { "rust" },
+    dependencies = "saghen/blink.cmp",
     opts = {
       server = {
         load_vscode_settings = false,
