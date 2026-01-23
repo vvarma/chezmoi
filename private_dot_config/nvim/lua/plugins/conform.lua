@@ -13,6 +13,7 @@ return {
         javascript = { "prettierd", "prettier", stop_after_first = true },
         json = { "jq" },
         bzl = { "buildifier" },
+        proto = { "clang-format" },
         ["*"] = { "codespell" },
       },
       format_on_save = {
