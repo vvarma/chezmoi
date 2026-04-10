@@ -55,6 +55,6 @@ cat >"${plist_path}" <<EOF
 </plist>
 EOF
 
-launchctl unload "${plist_path}" >/dev/null 2>&1 || true
-launchctl load -w "${plist_path}"
-launchctl start org.codeberg.p2502.lspmux
+## launchctl unload "${plist_path}" >/dev/null 2>&1 || true
+## launchctl load -w "${plist_path}"
+## launchctl start org.codeberg.p2502.lspmux

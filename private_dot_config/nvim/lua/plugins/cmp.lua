@@ -77,6 +77,13 @@ return {
       -- See the fuzzy documentation for more information
       fuzzy = { implementation = "prefer_rust_with_warning" },
     },
+    config = function(_, opts)
+      local utils = require("blink.cmp.lib.utils")
+      utils.disable_auto_wrap = utils.disable_auto_wrap or function() end
+      utils.restore_auto_wrap = utils.restore_auto_wrap or function() end
+
+      require("blink.cmp").setup(opts)
+    end,
     opts_extend = { "sources.default" },
   },
   --{
